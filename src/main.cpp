@@ -8,6 +8,6 @@ int main() {
     // n.build_network_from_file("data/Gowalla_edges.txt");
     // n.store_coordintes_timestamps("data/Gowalla_totalCheckins.txt");
 
-    Network n("locations.json", "checkins.json", "network.json");
+    Network n("checkins.json", "network.json");
     return 0;
 }

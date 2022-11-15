@@ -13,8 +13,7 @@ using namespace std;
 class Network {
     public:
         // Initializing graph from json
-            Network(json locations_data, json checkins_data, json network_data);
-            void load_locations(json locations_json);
+            Network(json checkins_data, json network_data);
             void load_checkins(json checkins_json);
             void load_network(json network_data);
         

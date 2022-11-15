@@ -1,6 +1,6 @@
 #include "network.h"
 
-Network::Network(json locations_data, json checkins_data, json network_data) {
+Network::Network(json checkins_data, json network_data) {
     cout << "Loading network..." << endl;
     load_network(network_data);
     cout << "Network loaded. Social network has " << map_network.size() << " users." << endl;
@@ -16,11 +16,6 @@ void Network::load_network(json network_data) {
     map_network = j.get<map<int, vector<int>>>();
 }
 
-void Network::load_locations(json locations_json) {
-    std::ifstream ifs(locations_json);
-    json j = json::parse(ifs);
-    map_coords = j.get<map<int, pair<double, double>>>();
-}
 
 void Network::load_checkins(json checkins_json) {
     std::ifstream ifs(checkins_json);
@@ -37,6 +32,7 @@ void Network::load_checkins(json checkins_json) {
 //          Output: Closest checkin entry for before or equal to 1120 at which user 2 has checked in.
 pair<string, pair<double, double>> get_closest_timestamp(int user_id, string time_stamp) {
     // TODO
+    return pair<string, pair<double, double>> {time_stamp, pair<double, double>{0, 0}};
 }
 
 
