@@ -1,3 +1,6 @@
+# 225 Final Project Team-bsdka
+
+## File structure
 ```
 📦225finalproject-bsdka
  ┣ 📂.vscode
@@ -38,3 +41,16 @@
  ┣ 📜project_proposal.md
  ┗ 📜team_contract.md
  ```
+ 
+ ## Instructions to run code
+ ### Targets:
+ 
+ ``` bash
+ make main
+ make tests
+ ```
+ ### Executables/Output directory
+ ```
+ ./a.out
+ ```
+ The executable would contain the results of the latest make executed.
