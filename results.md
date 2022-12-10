@@ -34,6 +34,14 @@ Therefore, we settled on sampling a small subsest of the entire dataset for test
 Since our dataset is temporal as well as spatial, we had to take user checkin timestamp into consideration as well in order to obtain the exact location for a user
 closest to a given timestamp.
 To integrate timestamp relavance in our analysis, we implemented a binary search algorithm that compares timestamps as strings and returns the the closest timestamp
-before or on any given timestamp
+before or on any given timestamp.
+![image](https://user-images.githubusercontent.com/81874557/206879374-e7b5d360-cc54-4d92-b091-d3acc3a0e53a.png)
+
+## Breadth First Search
+Our breadth first search algorithm was centered around finding all connections of users upto a k-depth. 0-depth means the user itself, 1-depth refers to immediate neighbors, 2-depth refers to neighbors of neighbors and so on. This was used to define and create a network of users for a particular user-id and confine the running of the timestamp algorithm to within k-depth connections to plot their locations.
+
+
+
+
 
 
