@@ -35,12 +35,23 @@ Since our dataset is temporal as well as spatial, we had to take user checkin ti
 closest to a given timestamp.
 To integrate timestamp relavance in our analysis, we implemented a binary search algorithm that compares timestamps as strings and returns the the closest timestamp
 before or on any given timestamp.
-![image](https://user-images.githubusercontent.com/81874557/206879374-e7b5d360-cc54-4d92-b091-d3acc3a0e53a.png)
+
+![WhatsApp Image 2022-12-10 at 18 13 26](https://user-images.githubusercontent.com/81874557/206880473-eb8a616e-44f2-4cb4-90d4-74f7d78547c3.jpg)
+
 
 ## Breadth First Search
 Our breadth first search algorithm was centered around finding all connections of users upto a k-depth. 0-depth means the user itself, 1-depth refers to immediate neighbors, 2-depth refers to neighbors of neighbors and so on. This was used to define and create a network of users for a particular user-id and confine the running of the timestamp algorithm to within k-depth connections to plot their locations.
 
+![WhatsApp Image 2022-12-10 at 18 13 27](https://user-images.githubusercontent.com/81874557/206880485-12430a8e-d9a2-45e3-9f38-7c25f6b77928.jpg)
 
+## Dijkstra's (modified)
+Our implementation of dijkstra's algorithm is a modified version of a traditional application of finding a route from one node to another in a given network. Our aim is to feed a user_id (k-depth and timestamp) to build a network from, a source node (starting point) within the network to evaluate the farthest point from the source.
+The assigned weights of the graph are the eucledian distances between latitude and longitudinal coordinates.
+The latitude and longitudes are calculated from the get_closest_timestamp by obtaining the location of a user closest to an input timestamp.
+
+![WhatsApp Image 2022-12-10 at 18 13 27](https://user-images.githubusercontent.com/81874557/206880669-21cabeb0-d42b-4a93-b363-cbbdbdf85035.jpg)
+
+In this is example, if we build the network from node 2 with depth 2, and choose the source to be 2 as well, then we would visualize the path from 2 to 9 since its the longest dijsktra's path.
 
 
 
