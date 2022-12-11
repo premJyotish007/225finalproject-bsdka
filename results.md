@@ -80,7 +80,15 @@ This images contains the network visualized in green as rays extending out from 
 
 A visualization formed as a result of this code snippet:
 
-![image](https://user-images.githubusercontent.com/81874557/206882097-af99792c-9c96-4e90-a39d-3a9c60a322c5.png)
+```
+int data_size = 10000;
+Network n(data_size);
+n.build_network_from_file("data/Gowalla_edges.txt");
+n.store_coordintes_timestamps("data/Gowalla_totalCheckins.txt");
+PNG* p = n.plot_k_depth_friends(1500, 2, "2011-09-15T22:17:43Z", 250);
+map<int, int> predecessor = n.dijsktra(p, 6798, 2, 4600, "2011-09-15T22:17:43Z");
+p->writeToFile("test_images/test_actual.png");
+```
 
 ![image](https://user-images.githubusercontent.com/81874557/206882039-9848704e-7dd5-48c6-b875-18fff04df632.png)
 
