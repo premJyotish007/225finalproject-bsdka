@@ -78,6 +78,14 @@ The inputs to this algorithm are 2 coordinates, and a pointer to a PNG, and an H
 
 This images contains the network visualized in green as rays extending out from the source to its friends (coordinates in red). The blue path visualized the resultant of dijkstra's algorithm which is the longest path from a given source in the network to any other point in the network.
 
+A visualization formed as a result of this code snippet:
+
+![image](https://user-images.githubusercontent.com/81874557/206882097-af99792c-9c96-4e90-a39d-3a9c60a322c5.png)
+
+![image](https://user-images.githubusercontent.com/81874557/206882039-9848704e-7dd5-48c6-b875-18fff04df632.png)
+
+
+
 
 
 
