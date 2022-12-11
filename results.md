@@ -72,6 +72,12 @@ Users within a connection network are colored in red, non-friends are colored in
 
 We used the Bresenham's line algorithm to color pixels between 2 given points. It iteratively determines at every point, which points to color around the slope line of best fit, so that the line is visible.
 
+The inputs to this algorithm are 2 coordinates, and a pointer to a PNG, and an HSLAPixel config representing a color. The algorithm colors all pixels in its path with that input pixel.
+
+![image](https://user-images.githubusercontent.com/81874557/206881873-2a01a255-b8d6-4183-8971-740022a41d79.png)
+
+This images contains the network visualized in green as rays extending out from the source to its friends (coordinates in red). The blue path visualized the resultant of dijkstra's algorithm which is the longest path from a given source in the network to any other point in the network.
+
 
 
 
