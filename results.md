@@ -46,12 +46,32 @@ Our breadth first search algorithm was centered around finding all connections o
 
 ## Dijkstra's (modified)
 Our implementation of dijkstra's algorithm is a modified version of a traditional application of finding a route from one node to another in a given network. Our aim is to feed a user_id (k-depth and timestamp) to build a network from, a source node (starting point) within the network to evaluate the farthest point from the source.
+
 The assigned weights of the graph are the eucledian distances between latitude and longitudinal coordinates.
+
 The latitude and longitudes are calculated from the get_closest_timestamp by obtaining the location of a user closest to an input timestamp.
 
 ![WhatsApp Image 2022-12-10 at 18 13 27](https://user-images.githubusercontent.com/81874557/206880669-21cabeb0-d42b-4a93-b363-cbbdbdf85035.jpg)
 
 In this is example, if we build the network from node 2 with depth 2, and choose the source to be 2 as well, then we would visualize the path from 2 to 9 since its the longest dijsktra's path.
+
+## Visualization
+
+We used the PNG and HSLAPixel classes from the CS 225 lib directories of the MPs to create, write to and load from PNG's.
+
+While instantiating a new instance of our Network class, 4 private variables: min_x, max_x, min_y, and max_x are also created and updated which ultimately contain the maximum and minimum of the latitudes and longitudes passed in as inputs (x mapped to latitude and y mapped to longitude respectively).
+
+These private variables facilitate the scaling of images to a given size such that the pixels are neither too spread out nor clustered.
+To determine the adjusted coordinates to plot the HSLAPixels, we use a formula:
+
+![image](https://user-images.githubusercontent.com/81874557/206881363-1dfdb53f-c2ec-4228-a95f-90df18e7c004.png)
+
+Users within a connection network are colored in red, non-friends are colored in black.
+
+#### Bresenham's line algorithm
+
+We used the Bresenham's line algorithm to color pixels between 2 given points. It iteratively determines at every point, which points to color around the slope line of best fit, so that the line is visible.
+
 
 
 
