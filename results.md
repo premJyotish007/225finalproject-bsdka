@@ -51,6 +51,8 @@ The assigned weights of the graph are the eucledian distances between latitude a
 
 The latitude and longitudes are calculated from the get_closest_timestamp by obtaining the location of a user closest to an input timestamp.
 
+We implemented Dijsktra's through using a priority queue instead of a regular queue, and by constructing the graph weights' map in a map<pair<int, int>, double> representing the source, destination, and the distance between the users. This allows us to achieve O(E + VlogV) time complexity and O(n) space complexity for map.
+
 ![WhatsApp Image 2022-12-10 at 18 13 27](https://user-images.githubusercontent.com/81874557/206880669-21cabeb0-d42b-4a93-b363-cbbdbdf85035.jpg)
 
 In this is example, if we build the network from node 2 with depth 2, and choose the source to be 2 as well, then we would visualize the path from 2 to 9 since its the longest dijsktra's path.
